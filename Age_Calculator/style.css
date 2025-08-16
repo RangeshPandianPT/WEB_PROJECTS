@@ -1,0 +1,165 @@
+:root {
+  --bg: linear-gradient(135deg, #f3e7e9, #e3eeff);
+  --text: #222;
+  --card-bg: #fff3f0;
+  --button: #ff69b4;
+  --button-hover: #ff1493;
+  --header: #ff4500;
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #2e2e2e, #1f1f1f);
+  --text: #eee;
+  --card-bg: #333;
+  --button: #5aaaff;
+  --button-hover: #3a7bd5;
+  --header: #ffcc00;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.2em;
+}
+
+.container {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 360px;
+  position: relative;
+}
+
+.rainbow-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid orange;
+  width: 0;
+  font-size: 28px;
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+  background: linear-gradient(to right, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+#resultCard {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #fffbf0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  position: relative;
+  animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+#resultCard::after {
+  content: "🎉🎈🥳✨";
+  position: absolute;
+  font-size: 26px;
+  top: -25px;
+  right: 15px;
+  opacity: 0.6;
+  animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+input[type="date"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+label::after {
+  content: " 👋";
+  animation: wave 2s infinite;
+  display: inline-block;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(14deg); }
+  40% { transform: rotate(-8deg); }
+  60% { transform: rotate(14deg); }
+  80% { transform: rotate(-4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  background-color: var(--button);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--button-hover);
+}
+
+#clearBtn {
+  background-color: #aaa;
+}
+#clearBtn:hover {
+  background-color: #888;
+}
+
+#result p {
+  font-size: 18px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.hidden {
+  display: none;
+}

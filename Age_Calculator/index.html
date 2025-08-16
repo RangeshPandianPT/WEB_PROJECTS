@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎈 Age Calculator 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="theme-toggle">
+    <label>
+      <input type="checkbox" id="themeSwitcher" />
+      🌞 / 🌙
+    </label>
+  </div>
+
+  <div class="container">
+    <h1 class="rainbow-text">🎉 Age Calculator 🎉</h1>
+    <form id="ageForm">
+      <label for="dob">📅 Enter Your Date of Birth:</label>
+      <input type="date" id="dob" required />
+      <div class="buttons">
+        <button type="submit" id="calcBtn" disabled>🧮 Calculate</button>
+        <button type="button" id="clearBtn">🧹 Clear</button>
+      </div>
+    </form>
+    <div id="resultCard" class="hidden">
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
