@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Vikaasni 🎂</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Welcome Page */
+    .welcome-screen {
+      background: linear-gradient(to top right, #a5f2f3, #c3fbd6);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .welcome-screen h1 {
+      font-size: 2.8em;
+      color: #004d40;
+      margin-bottom: 20px;
+    }
+
+    .welcome-screen p {
+      font-size: 1.2em;
+      color: #00695c;
+    }
+
+    .balloons {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .balloon {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      background-color: pink;
+      border-radius: 50% 50% 45% 45%;
+      animation: floatUp 6s ease-in infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-150vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Main Content Starts */
+    .main-content {
+      display: none;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: #b2ebf2;
+      color: #004d40;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .quotes {
+      font-style: italic;
+      background-color: #ffffffcc;
+      padding: 15px;
+      margin: 20px auto;
+      border-left: 5px solid #00796b;
+      width: 90%;
+      max-width: 700px;
+      border-radius: 10px;
+    }
+
+    .poem-box {
+      background-color: #fff3e0;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 30px auto;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .poem {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #6d4c41;
+    }
+
+    .cartoon-container h3 {
+      margin: 15px auto;
+      max-width: 90%;
+      color: #00695c;
+      font-weight: 500;
+    }
+
+    .timeline {
+      padding: 40px 20px;
+      background-color: #fff8e1;
+    }
+
+    .timeline h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #d84315;
+    }
+
+    .timeline-item {
+      background: #ffffffaa;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 15px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 1.5s ease;
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: scale(1.03);
+    }
+
+    .timeline-item img {
+      max-width: 90%;
+      border-radius: 15px;
+      border: 3px solid #80deea;
+      box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
+    }
+
+    .timeline-item .desc {
+      margin-top: 10px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 18px;
+      color: #004d40;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #e0f7f4;
+      color: #00796b;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 1.2em;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer:last-of-type {
+      background: linear-gradient(to right, #006064, #00838f);
+      color: #e0f7fa;
+      font-size: 15px;
+      border-top: 4px solid #00bcd4;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- 🎈 Welcome Screen 🎈 -->
+  <div class="welcome-screen" id="welcome">
+    <h1>🎉 Welcome to Vikaasni's Birthday Surprise! 🎂</h1>
+    <p>Get ready for joy, smiles, and lots of love! 💖</p>
+    <div class="balloons" id="balloons"></div>
+  </div>
+
+  <!-- 🎂 Main Content Page -->
+  <div class="main-content" id="mainContent">
+    <header>
+      <h1>🎉 Happy Birthday, <br> Vikaasni Thangachi! 🎂</h1>
+      <p class="intro">
+        She is not just my younger sister — <strong>she is my joy, my little star, my forever companion</strong>. 💫💖
+      </p>
+      <blockquote class="quotes">
+        "Sisters are different flowers from the same garden." 🌸<br><br>
+        "A sister is a gift to the heart, a friend to the spirit, a golden thread to the meaning of life." ✨
+      </blockquote>
+
+      <div class="poem-box">
+        <p class="poem">
+          In your smile, the sun does rise,<br>
+          A sparkle shines in your bright eyes. ✨<br>
+          You laugh, the world begins to glow,<br>
+          You’re the magic I’ll always know. 🌟<br><br>
+          Little sister, my dearest friend,<br>
+          On you, my love will never end. 💖<br>
+          Today’s your day — shine bold and free,<br>
+          You’re everything this world should be! 🎉
+        </p>
+      </div>
+
+      <h2> 🎈 You’ve filled this world with your smile for 6932 days! Keep shining, Vikaasni! 🌟</h2>
+
+      <div class="cartoon-container">
+        <h3>"Having you as my sister is like having a built-in best friend — one who always loves, supports, and inspires me.  
+        Happy Birthday, Vikaasni!" 🎂💐</h3>
+        <h3>"No matter how old we get, you'll always be my sweet little sister. I’m proud of the beautiful soul you are becoming. 
+        Love you always!" 💫❤<br>"From sharing toys to sharing dreams — I’m lucky to have grown up with you by my side." 🧸✨</h3>
+      </div>
+
+      <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg"/>
+      </audio>
+    </header>
+
+    <section class="timeline">
+      <h2>🗺 Her Beautiful Journey</h2>
+
+      <div class="timeline-item"><div class="desc"><img src="images/vikaasni_1.jpg"/><br/>🌸 Childhood captured in a frame! ✨💖</div></div>
+    <div class="timeline-item"><div class="desc"><img src="images/vikaasni_2.jpg"/><br/>🌸 Tiny explorers on carousel joy! ✨💖</div></div>
+    <div class="timeline-item"><div class="desc"><img src="images/vikaasni_3.jpg"/><br/>🌸 Princess of our hearts. 👑 ✨💖</div></div>
+    <div class="timeline-item"><div class="desc"><img src="images/vikaasni_4.jpg"/><br/>🌸 Captured moments, endless memories. ✨💖</div></div>
+    <div class="timeline-item"><div class="desc"><img src="images/vikaasni_5.jpg"/><br/>🌸 Tiny moments, forever memories. ✨💖</div></div>
+    <div class="timeline-item"><div class="desc"><img src="images/vikaasni_6.jpg"/><br/>🌸 A magical moment in her journey — glowing, growing, and always smiling! ✨💖</div></div>
+    <div class="timeline-item"><div class="desc"><img src="images/vikaasni_7.jpg"/><br/>🌸 A magical moment in her journey — glowing, growing, and always smiling! ✨💖</div></div>
+    <div class="timeline-item"><div class="desc"><img src="images/vikaasni_8.jpg"/><br/>🌸 A magical moment in her journey — glowing, growing, and always smiling! ✨💖</div></div>
+    <div class="timeline-item"><div class="desc"><img src="images/vikaasni_9.jpg"/><br/>🌸 A magical moment in her journey — glowing, growing, and always smiling! ✨💖</div></div>
+    <div class="timeline-item"><div class="desc"><img src="images/vikaasni_10.jpg"/><br/>🌸 A magical moment in her journey — glowing, growing, and always smiling! ✨💖</div></div>
+
+      <!-- Add other image blocks as needed -->
+
+    </section>
+
+    <footer>
+      <p>💖 With all my heart, this surprise was created by</p>
+      <h2 style="margin-top: 10px;">Rangesh (Anna) 💫</h2>
+      <p>To my dearest sister Vikaasni, may your birthday be as magical and beautiful as you are! 🎂🎉</p>
+      <p>Love you always 💙</p>
+    </footer>
+
+    <footer>
+      <p style="margin: 5px 0;">
+        © <span id="year"></span> | All Rights Reserved | This special birthday page was lovingly created by 
+        <strong style="color: #fff176;">Rangesh (Anna)</strong> 💙 for 
+        <strong style="color: #ffccbc;">Vikaasni Thangachi</strong> 🎂
+      </p>
+      <p style="margin: 5px 0; font-style: italic;">“Every pixel of this page carries a piece of my love.” 💫</p>
+    </footer>
+  </div>
+
+  <script>
+    // 🎈 Balloon generation
+    const balloonColors = ['#f06292', '#ba68c8', '#64b5f6', '#4db6ac', '#ffd54f'];
+    const balloonContainer = document.getElementById('balloons');
+
+    for (let i = 0; i < 25; i++) {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      balloon.style.left = Math.random() * 100 + 'vw';
+      balloon.style.backgroundColor = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+      balloon.style.animationDuration = 4 + Math.random() * 4 + 's';
+      balloonContainer.appendChild(balloon);
+    }
+
+    // 🎬 Transition to Main Content
+    setTimeout(() => {
+      document.getElementById('welcome').classList.add('hidden');
+      document.getElementById('mainContent').style.display = 'block';
+    }, 5000); // 5 seconds delay
+
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

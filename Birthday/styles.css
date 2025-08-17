@@ -1,0 +1,97 @@
+
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to right, #8ec5fc, #e0c3fc);
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.intro, .quotes {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.poem-box {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+.poem {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.cartoon-container img {
+  max-width: 300px;
+  margin-top: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.timeline {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.timeline h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.timeline-item {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.desc {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.floating-shapes::before,
+.floating-shapes::after {
+  content: "💖✨💫🎉💙";
+  font-size: 2rem;
+  position: absolute;
+  animation: float 10s linear infinite;
+  top: 100%;
+  left: 10%;
+}
+
+.floating-shapes::after {
+  animation-delay: 5s;
+  left: 60%;
+}
+
+@keyframes float {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    opacity: 0;
+  }
+}
